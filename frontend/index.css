@@ -1,0 +1,342 @@
+/* Enhanced index.css with modal and form styling */
+
+:root {    
+    /* FONTS */
+    --scary-font: 'Metal Mania';
+    --typewriter-font: 'Inconsolata';
+    --funny-font: 'Balsamiq Sans';
+    --curly-font: 'Pacifico';
+    --old-font: 'Cinzel';
+    --simple-font: 'Noto Sans HK';
+    --funky-font: 'MuseoModerno';
+    --sweet-font: 'Lobster';
+    --professional-font: 'Old Standard TT';
+    --elegant-font: 'Sora';
+    --border-color: black;
+    --box-bg-color: white;
+    --text-color: black;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--elegant-font);
+    margin: 0;
+    color: var(--text-color);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #1a1a2e;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    color: white;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: var(--old-font);
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+#creativity-value {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* File Upload Styles */
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.upload-preview {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#avatar-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-group small {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* Button Styles */
+.form-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#button-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    margin-top: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+}
+
+.generate-btn, .default-btn, .regenerate-btn, .edit-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.generate-btn {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    flex: 1;
+    min-width: 200px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.default-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.default-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.regenerate-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+    margin: 1rem auto;
+    display: block;
+}
+
+.edit-btn {
+    background: linear-gradient(45deg, #a8edea, #fed6e3);
+    color: #333;
+    margin: 0.5rem auto;
+    display: block;
+}
+
+.regenerate-btn:hover, .edit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Styles */
+.container {
+    width: 90%;
+    max-width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#loader {
+    display: none;
+    text-align: center;
+}
+
+#loader h3 {
+    color: white;
+    margin: 1em;
+    font-family: var(--old-font);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#loader-img {
+    width: 40px;
+    display: block;
+    margin: 1.5em auto;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #f1faee;
+    margin: 20px auto 0;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+.quote {
+    margin: 1.5em 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.quote-span {
+    padding: 8px 12px;
+    background: rgba(22, 43, 72, 0.9);
+    border-radius: 8px;
+    display: inline-block;
+    margin: 2px;
+}
+
+.name-wrapper {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.name-span {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    padding: 12px 16px;
+    background: rgba(250, 0, 0, 0.8);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .generate-btn {
+        min-width: auto;
+    }
+
+    .button-separator {
+        margin: 0;
+        padding: 0.5rem;
+    }
+    
+    .quote {
+        font-size: 1.1em;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Hidden class */
+.hidden {
+    display: none !important;
+}

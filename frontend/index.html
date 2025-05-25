@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>Poetic Quote Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&Balsamiq+Sans&family=Cinzel&family=Inconsolata&family=Sora&Lobster&family=Metal+Mania&family=MuseoModerno&family=Noto+Sans+HK&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Configuration Modal -->
+    <div id="config-modal" class="modal">
+        <div class="modal-content">
+            <h2>Create Your Poetic Profile</h2>
+            <form id="user-config-form">
+                <div class="form-group">
+                    <label for="user-name">Your Name:</label>
+                    <input type="text" id="user-name" placeholder="Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="favorite-activity">Favorite Activity:</label>
+                    <input type="text" id="favorite-activity" placeholder="e.g., Star Gazing, Reading, Dancing" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="favorite-place">Favorite Place:</label>
+                    <input type="text" id="favorite-place" placeholder="e.g., Forest, Beach, Library, Mountains" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="creativity-level">Creativity Level:</label>
+                    <input type="range" id="creativity-level" min="0.1" max="1.0" step="0.1" value="0.8">
+                    <div class="range-labels">
+                        <span>Conservative</span>
+                        <span id="creativity-value">0.8</span>
+                        <span>Wild</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="avatar-upload">Upload Your Avatar (optional):</label>
+                    <input type="file" id="avatar-upload" accept="image/*">
+                    <div class="upload-preview">
+                        <img id="avatar-preview" src="avatar.png" alt="Avatar preview">
+                    </div>
+                    <small>Leave empty to use a generic avatar</small>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="generate-btn">Generate My Shakespearean Quote!</button>
+                    <span id="button-separator">OR</span>
+                    <button type="button" id="use-defaults" class="default-btn">Use Default Info</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content" style="display: none;">
+        <img class="avatar" id="display-avatar" src="avatar.png" alt="A headshot of the quote author" />
+        
+        <div id="loader">
+            <img id="loader-img" src="loading.gif" alt="Loading spinner"/>
+            <h3>Crafting thy Shakespearean verse...</h3>
+        </div>
+        
+        <div class="quote-wrapper">
+            <h2 class="quote"><span><span class="quote-span"></span></span></h2>
+        </div>
+        
+        <div class="name-wrapper">
+            <span><span class="name-span"></span></span>
+        </div>
+        
+        <button id="regenerate-btn" class="regenerate-btn">Generate New Quote</button>
+        <button id="edit-profile-btn" class="edit-btn">Edit Profile</button>
+    </div>
+
+    <script src="utils.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
